@@ -7,8 +7,8 @@ namespace PharmVerse.Domain.Common
      public abstract class Entity
      {
           int? _requestedHashCode;
-          int _Id;
-          public virtual int Id
+          Guid _Id;
+          public virtual Guid Id
           {
                get
                {
@@ -20,12 +20,14 @@ namespace PharmVerse.Domain.Common
                }
           }
 
+          public byte[] RowVersion { get; set; }
+
           private List<INotification> _domainEvents;
           public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();
 
           public void AddDomainEvent(INotification eventItem)
           {
-               _domainEvents = _domainEvents ?? new List<INotification>();
+               _domainEvents ??= new List<INotification>();
                _domainEvents.Add(eventItem);
           }
 
@@ -41,7 +43,7 @@ namespace PharmVerse.Domain.Common
 
           public bool IsTransient()
           {
-               return this.Id == default(Int32);
+               return this.Id == default(Guid);
           }
 
           public override bool Equals(object obj)
@@ -68,7 +70,7 @@ namespace PharmVerse.Domain.Common
                if (!IsTransient())
                {
                     if (!_requestedHashCode.HasValue)
-                         _requestedHashCode = this.Id.GetHashCode() ^ 31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
+                         _requestedHashCode = this.Id.GetHashCode() ^ 31;
 
                     return _requestedHashCode.Value;
                }
