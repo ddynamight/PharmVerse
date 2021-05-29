@@ -81,12 +81,6 @@ namespace PharmVerse.Persistence.Contexts
           protected override void OnModelCreating(ModelBuilder modelBuilder)
           {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new ExpensesConfiguration());
-            modelBuilder.ApplyConfiguration(new SupplierConfiguration());
-            modelBuilder.ApplyConfiguration(new ProductConfiguration());
-
-
             base.OnModelCreating(modelBuilder);
           } 
 
