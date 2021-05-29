@@ -12,32 +12,43 @@ using PharmVerse.Domain.Reviews;
 using PharmVerse.Domain.Transactions;
 using PharmVerse.Domain.Users;
 using PharmVerse.Domain.Wallets;
+using PharmVerse.Domain.Models;
+using PharmVerse.Persistence.Configurations;
 
 namespace PharmVerse.Persistence.Contexts
 {
     public class AppDbContext : DbContext, IAppDbContext
-     {
-          public AppDbContext()
-          {
-          }
+    {
+        public AppDbContext()
+        {
+        }
 
-          public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-          {
-          }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
 
-          public static AppDbContext Create()
-          {
-               return new AppDbContext();
-          }
+        public static AppDbContext Create()
+        {
+            return new AppDbContext();
+        }
 
           
-          public DbSet<Invite> Invites { get; set; }
-          public DbSet<Notification> Notifications { get; set; }
-          public DbSet<Review> Reviews { get; set; }
-          public DbSet<Setting> Settings { get; set; }
-          public DbSet<Transaction> Transactions { get; set; }
-          public DbSet<Wallet> Wallets { get; set; }
-          public DbSet<WalletHistory> WalletHistories { get; set; }
+        public DbSet<Invite> Invites { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
+        public DbSet<WalletHistory> WalletHistories { get; set; }
+
+        public DbSet<Expenses> Expenses { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
+           
 
 
           public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -69,10 +80,15 @@ namespace PharmVerse.Persistence.Contexts
 
           protected override void OnModelCreating(ModelBuilder modelBuilder)
           {
-               modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ExpensesConfiguration());
+            modelBuilder.ApplyConfiguration(new SupplierConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
 
-               base.OnModelCreating(modelBuilder);
-          }
+
+            base.OnModelCreating(modelBuilder);
+          } 
 
           protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
           {
