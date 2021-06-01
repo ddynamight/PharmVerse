@@ -1,14 +1,14 @@
-﻿using System;
+﻿using PharmVerse.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PharmVerse.Domain.Models
+namespace PharmVerse.Domain.Patients
 {
-    public class Customer
+    public class Patient : Entity, IHasDomainEvent
     {
-        public Int64 Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -17,11 +17,11 @@ namespace PharmVerse.Domain.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
-        public DateTime DateCreated { get; set; } 
+        public string DoctorsInCharge { get; set; }
+        public string Alliment { get; set; }
+        public DateTime Created { get; set; }
         public DateTime LastOnline { get; set; }
-        public bool IsVerified { get; set; }
-        public bool IsArchived { get; set; }
-        public bool Active { get; set; }
-        public bool IsDeleted { get; set; } 
+
+        public new List<DomainEvent> DomainEvents { get; set; } = new List<DomainEvent>();
     }
 }

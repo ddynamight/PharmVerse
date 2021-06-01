@@ -13,7 +13,10 @@ using PharmVerse.Domain.Transactions;
 using PharmVerse.Domain.Users;
 using PharmVerse.Domain.Wallets;
 using PharmVerse.Domain.Models;
-using PharmVerse.Persistence.Configurations;
+using PharmVerse.Domain.Patients;
+using PharmVerse.Domain.Products;
+using PharmVerse.Domain.Staffs;
+using PharmVerse.Domain.Stocks;
 
 namespace PharmVerse.Persistence.Contexts
 {
@@ -41,8 +44,7 @@ namespace PharmVerse.Persistence.Contexts
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<WalletHistory> WalletHistories { get; set; }
 
-        public DbSet<Expenses> Expenses { get; set; }
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Patient> Patients { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }

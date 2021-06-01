@@ -8,7 +8,6 @@ namespace PharmVerse.Domain.Products
      {
           public string Name { get; set; }
           public DateTime Created { get; set; }
-          public bool IsDeleted { get; set; }
           public new List<DomainEvent> DomainEvents { get; set; } = new List<DomainEvent>();
      }
 }

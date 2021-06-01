@@ -2,7 +2,11 @@
 using PharmVerse.Domain.Invites;
 using PharmVerse.Domain.Models;
 using PharmVerse.Domain.Notifications;
+using PharmVerse.Domain.Patients;
+using PharmVerse.Domain.Products;
 using PharmVerse.Domain.Reviews;
+using PharmVerse.Domain.Staffs;
+using PharmVerse.Domain.Stocks;
 using PharmVerse.Domain.Transactions;
 using PharmVerse.Domain.Users;
 using PharmVerse.Domain.Wallets;
@@ -22,8 +26,7 @@ namespace PharmVerse.Application.Interfaces
         DbSet<Wallet> Wallets { get; set; }
         DbSet<WalletHistory> WalletHistories { get; set; }
 
-        DbSet<Expenses> Expenses { get; set; }
-        DbSet<Customer> Customers { get; set; }
+        DbSet<Patient> Patients { get; set; } 
         DbSet<Product> Products { get; set; }
         DbSet<Category> Categories { get; set; }
         DbSet<Supplier> Suppliers { get; set; }

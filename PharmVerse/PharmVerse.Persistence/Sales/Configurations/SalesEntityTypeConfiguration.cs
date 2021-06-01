@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PharmVerse.Domain.Models
+namespace PharmVerse.Persistence.Sales.Configurations
 {
-    class Sales
+    class SalesEntityTypeConfiguration
     {
     }
 }
