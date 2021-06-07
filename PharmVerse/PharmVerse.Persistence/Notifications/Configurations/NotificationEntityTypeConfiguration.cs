@@ -18,7 +18,6 @@ namespace PharmVerse.Persistence.Notifications.Configurations
             builder.HasKey(n => n.AppUserId);
 
             builder.Ignore(n => n.DomainEvents);
-
             builder.Property(n => n.RowVersion).IsRowVersion();
         }
     }
