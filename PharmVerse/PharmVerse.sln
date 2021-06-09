@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PharmVerse.Service", "Pharm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PharmVerse.Auth", "PharmVerse.Auth\PharmVerse.Auth.csproj", "{C14D2393-B0BC-435F-9926-96462ADB890B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmVerse.Web", "PharmVerse.Web\PharmVerse.Web.csproj", "{E12E1A89-790D-42F1-A971-EA73B35007A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PharmVerse.Web", "PharmVerse.Web\PharmVerse.Web.csproj", "{E12E1A89-790D-42F1-A971-EA73B35007A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
