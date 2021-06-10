@@ -33,8 +33,6 @@ namespace PharmVerse.Application.Interfaces
         DbSet<Staff> Staffs { get; set; }
         DbSet<Stock> Stocks { get; set; }
 
-
-
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
      }
 }
