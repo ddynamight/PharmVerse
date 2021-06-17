@@ -1,6 +1,4 @@
 using System;
-using System.Net;
-using System.Net.Mime;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
@@ -10,13 +8,13 @@ namespace PharmVerse.Infrastructure.Mail
   public class Mail
   {
     //private readonly IConfiguration _config;
-    public string From { get; set; }
-    public string To { get; set; }
-    public string Name { get; set; }
-    public string Subject { get; set; }
-    public string Body { get; set; }
-    
-    public string Heading { get; set; }
+    private string From { get; set; }
+    private string To { get; set; }
+    private string Name { get; set; }
+    private string Subject { get; set; }
+    private string Body { get; set; }
+
+    private string Heading { get; set; }
 
     public Mail(string from, string to, string subject, string name, string body, string heading)
     {
@@ -28,7 +26,7 @@ namespace PharmVerse.Infrastructure.Mail
       Heading = heading.ToUpper();
     }
 
-    async Task SendMail()
+    public async Task<Response> SendMail()
     {
       var fullName = Name == "" ? Name : From.Split("@")[0].ToUpper();
       var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
@@ -40,6 +38,7 @@ namespace PharmVerse.Infrastructure.Mail
       var body = Body;
       var mail = MailHelper.CreateSingleEmail(from, to, subject, heading, body);
       var response = await client.SendEmailAsync(msg: mail);
+      return response;
     }
   }
 }
