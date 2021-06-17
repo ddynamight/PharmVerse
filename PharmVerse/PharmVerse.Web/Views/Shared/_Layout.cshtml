@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PharmVerse | @ViewData["Title"] </title>
+
+    <link href="~/Content/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/tailwind.min.css" rel="stylesheet" />
+
+    <link href="~/Content/styles/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mx-auto antialiased text-gray-900 bg-white" x-data="setup()">
+        <header>
+            <!-- Navbar -->
+            <nav>
+                <div class="flex items-center justify-between px-4 py-2">
+                    <!-- Logo -->
+                    <div class="flex items-center justify-start w-1/4">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <span class="sr-only">Home</span>
+                            <span class="text-2xl font-semibold">Pharmverse</span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <button @@click="isNavOpen = !isNavOpen"
+                            x-cloak
+                            class="inline-flex items-center justify-center text-gray-400 rounded-md lg:hidden focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            type="button"
+                            aria-controls="mobile-menu"
+                            :aria-expanded="isNavOpen ? 'true' : 'false'">
+                        <span class="sr-only">Open main menu</span>
+
+                        <!-- Menu icon -->
+                        <svg x-show="!isNavOpen"
+                             class="w-8 h-8"
+                             xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+
+                        <!-- X icon -->
+                        <svg x-show="isNavOpen"
+                             class="w-8 h-8"
+                             xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <!-- Desktop Middle links -->
+                    <div class="items-center justify-center hidden w-1/2 lg:flex">
+                        <a asp-area="" asp-controller="Home" asp-action="Index"
+                           class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                            Home
+                        </a>
+                        <a asp-area="" asp-controller="About" asp-action="Index"
+                           class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                            About
+                        </a>
+                        <a asp-area="" asp-controller="Pricing" asp-action="Index"
+                           class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                            Pricing
+                        </a>
+                        <a asp-area="" asp-controller="Contact" asp-action="Index"
+                           class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                            Contact
+                        </a>
+                        <a asp-area="" asp-controller="Faqs" asp-action="Index"
+                           class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                            FAQ
+                        </a>
+                    </div>
+
+                    <!-- Desktop Right links -->
+                    <div class="items-center justify-end hidden w-1/4 space-x-2 lg:flex">
+                        <a asp-area="" asp-controller="Home" asp-action="Index"
+                           class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            Login
+                        </a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index"
+                           class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-full shadow-sm whitespace-nowrap hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="flex flex-col items-center space-y-3 lg:hidden" x-cloak x-show="isNavOpen" @@click.away="isNavOpen = false">
+                    <a asp-area="" asp-controller="Home" asp-action="Index"
+                       class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                        Home
+                    </a>
+                    <a asp-area="" asp-controller="About" asp-action="Index"
+                       class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                        About
+                    </a>
+                    <a asp-area="" asp-controller="Pricing" asp-action="Index"
+                       class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                        Pricing
+                    </a>
+                    <a asp-area="" asp-controller="Contact" asp-action="Index"
+                       class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                        Contact
+                    </a>
+                    <a asp-area="" asp-controller="Faqs" asp-action="Index"
+                       class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-700">
+                        FAQ
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="Index"
+                       class="px-4 py-2 text-base font-medium text-gray-900 transition-colors rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        Login
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="Index"
+                       class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-full shadow-sm whitespace-nowrap hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Get Started
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+
+
+    </div>
+    
+
+    <footer class="bg-gray-50 pt-10 sm:mt-10 pt-5 border-t-2 border-fuchsia-600">
+        <div class="max-w-6xl m-auto text-black flex flex-wrap justify-left">
+            <!-- Col-1 -->
+            <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                <!-- Col Title -->
+                <div class="text-xs uppercase font-medium mb-6">
+                    Getting Started
+                </div>
+
+                <!-- Links -->
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    Installation
+                </a>
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    Release Notes
+                </a>
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    Upgrade Guide
+                </a>
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    Using with Preprocessors
+                </a>
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    Optimizing for Production
+                </a>
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    Browser Support
+                </a>
+                <a href="#" class="my-3 block text-sm font-medium duration-700">
+                    IntelliSense
+                </a>
+            </div>
+
+            <!-- Col-2 -->
+            <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                <!-- Col Title -->
+                <div class="text-xs uppercase text-black font-medium mb-6">
+                    Core Concepts
+                </div>
+
+                <!-- Links -->
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Utility-First
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Responsive Design
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Hover, Focus, & Other States
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Dark Mode
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Adding Base Styles
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Extracting Components
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Adding New Utilities
+                </a>
+            </div>
+
+            <!-- Col-3 -->
+            <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                <!-- Col Title -->
+                <div class="text-xs uppercase text-black font-medium mb-6">
+                    Customization
+                </div>
+
+                <!-- Links -->
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Configuration
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Theme Configuration
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Breakpoints
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Customizing Colors
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Customizing Spacing
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Configuring Variants
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Plugins
+                </a>
+            </div>
+
+            <!-- Col-3 -->
+            <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                <!-- Col Title -->
+                <div class="text-xs uppercase text-black font-medium mb-6">
+                    Community
+                </div>
+
+                <!-- Links -->
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    GitHub
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Discord
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    Twitter
+                </a>
+                <a href="#" class="my-3 block text-black text-sm font-medium duration-700">
+                    YouTube
+                </a>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="pt-2">
+            <div class="flex pb-5 px-3 m-auto pt-5
+            border-t border-gray-500 text-black text-sm
+            flex-col md:flex-row max-w-6xl">
+                <div class="mt-2">
+                    &copy; 2021 - Pharmverse. All Rights Reserved.
+                </div>
+
+                <!-- Required Unicons (if you want) -->
+                <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                    <a href="#" class="w-6 mx-1">
+                        <span class="mdi mdi-facebook mdi-24px text-black"></span>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <span class="mdi mdi-twitter mdi-24px text-black"></span>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <span class="mdi mdi-youtube mdi-24px text-black"></span>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <span class="mdi mdi-linkedin mdi-24px text-black"></span>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <span class="mdi mdi-instagram mdi-24px text-black"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    @*<style>
+            [x-cloak] {
+                display: none;
+            }
+        </style>*@
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+    <script>
+        const setup = () => {
+            return {
+                isNavOpen: false,
+
+                billPlan: 'monthly',
+
+                plans: [
+                    {
+                        name: 'Easy',
+                        discretion: 'All the basics for businesses that are just getting started.',
+                        price: {
+                            monthly: 29,
+                            annually: 29 * 12 - 199,
+                        },
+                        features: ['One project', 'Your dashboard'],
+                    },
+                    {
+                        name: 'Basic',
+                        discretion: 'Better for growing businesses that want more customers.',
+                        price: {
+                            monthly: 59,
+                            annually: 59 * 12 - 100,
+                        },
+                        features: ['Two projects', 'Your dashboard', 'Components included', 'Advanced charts'],
+                    },
+                    {
+                        name: 'Custom',
+                        discretion: 'Advanced features for pros who need more customization.',
+                        price: {
+                            monthly: 139,
+                            annually: 139 * 12 - 100,
+                        },
+                        features: ['Unlimited projects', 'Your dashboard', '+300 Components', 'Chat support'],
+                    },
+                ],
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
