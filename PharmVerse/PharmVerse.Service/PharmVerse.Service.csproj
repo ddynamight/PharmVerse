@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\PharmVerse.Presentation\PharmVerse.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

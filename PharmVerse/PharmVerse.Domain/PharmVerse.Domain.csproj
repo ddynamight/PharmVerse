@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
+    <Compile Remove="Sales\**" />
+    <EmbeddedResource Remove="Sales\**" />
+    <None Remove="Sales\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Sales\" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
   </ItemGroup>
 
 </Project>
