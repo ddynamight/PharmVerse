@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PharmVerse.App", "PharmVers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PharmVerse.Admin", "PharmVerse.Admin\PharmVerse.Admin.csproj", "{5F48DD8F-F19C-409A-9455-A632E2B63FB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PharmVerse.Presentation", "PharmVerse.Presentation\PharmVerse.Presentation.csproj", "{78DDB5B3-F336-40AE-9E2B-8CC7AEF7F8C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{5F48DD8F-F19C-409A-9455-A632E2B63FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F48DD8F-F19C-409A-9455-A632E2B63FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F48DD8F-F19C-409A-9455-A632E2B63FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DDB5B3-F336-40AE-9E2B-8CC7AEF7F8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DDB5B3-F336-40AE-9E2B-8CC7AEF7F8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DDB5B3-F336-40AE-9E2B-8CC7AEF7F8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DDB5B3-F336-40AE-9E2B-8CC7AEF7F8C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

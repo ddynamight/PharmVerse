@@ -1,26 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using PharmVerse.Application.Interfaces.Persistence;
+using PharmVerse.Domain.Invites;
+using PharmVerse.Domain.Models;
+using PharmVerse.Domain.Notifications;
+using PharmVerse.Domain.Patients;
+using PharmVerse.Domain.Products;
+using PharmVerse.Domain.Reviews;
+using PharmVerse.Domain.Staffs;
+using PharmVerse.Domain.Stocks;
+using PharmVerse.Domain.Transactions;
+using PharmVerse.Domain.Users;
+using PharmVerse.Domain.Wallets;
 using System;
 using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using PharmVerse.Application.Interfaces;
-using PharmVerse.Domain.Invites;
-using PharmVerse.Domain.Notifications;
-using PharmVerse.Domain.Reviews;
-using PharmVerse.Domain.Transactions;
-using PharmVerse.Domain.Users;
-using PharmVerse.Domain.Wallets;
-using PharmVerse.Domain.Models;
-using PharmVerse.Domain.Patients;
-using PharmVerse.Domain.Products;
-using PharmVerse.Domain.Staffs;
-using PharmVerse.Domain.Stocks;
 
 namespace PharmVerse.Persistence.Contexts
 {
-    public class AppDbContext : DbContext, IAppDbContext
+     public class AppDbContext : DbContext, IAppDbContext
     {
         public AppDbContext()
         {
