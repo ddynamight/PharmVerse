@@ -1,9 +1,13 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
 using PharmVerse.Application.Interfaces.Infrastructure;
+<<<<<<< HEAD
+=======
 using PharmVerse.Domain.Events.Patients;
+>>>>>>> main
 using System.Threading;
 using System.Threading.Tasks;
+using PharmVerse.Domain.Patients.Patients;
 
 namespace PharmVerse.Presentation.Patients.Handlers.Events
 {

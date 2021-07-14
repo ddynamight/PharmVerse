@@ -1,13 +1,25 @@
+<<<<<<< HEAD
+﻿using MediatR;
+using Microsoft.Extensions.Logging;
+=======
 ﻿using Microsoft.Extensions.Logging;
 using PharmVerse.Domain.Events.Patients;
+>>>>>>> main
 using System.Threading;
 using System.Threading.Tasks;
+using PharmVerse.Domain.Patients.Patients;
 
 namespace PharmVerse.Presentation.Patients.Handlers.Events
 {
+<<<<<<< HEAD
+    public class PatientAccessedEventHandler : INotificationHandler<PatientAccessedEvent>
+    {
+        private readonly ILogger<PatientAccessedEventHandler> _logger;
+=======
      public class PatientAccessedEventHandler
      {
           private readonly ILogger<PatientAccessedEventHandler> _logger;
+>>>>>>> main
 
           public PatientAccessedEventHandler(ILogger<PatientAccessedEventHandler> logger)
           {
