@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using PharmVerse.Domain.Patients.Patients;
+﻿using MediatR;
+using Microsoft.Extensions.Logging;
+using PharmVerse.Domain.Events.Patients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PharmVerse.Presentation.Patients.Handlers.Events
 {
-    public class PatientAccessedEventHandler
+    public class PatientAccessedEventHandler : INotificationHandler<PatientAccessedEvent>
     {
         private readonly ILogger<PatientAccessedEventHandler> _logger;
 

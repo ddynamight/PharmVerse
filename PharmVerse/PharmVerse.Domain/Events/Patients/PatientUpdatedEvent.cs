@@ -1,15 +1,16 @@
 ﻿using MediatR;
+using PharmVerse.Domain.Patients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PharmVerse.Domain.Patients.Patients
+namespace PharmVerse.Domain.Events.Patients
 {
-    public class PatientAccessedEvent : INotification
+    public class PatientUpdatedEvent : INotification
     {
-        public PatientAccessedEvent(Patient patient)
+        public PatientUpdatedEvent(Patient patient)
         {
             Patient = patient;
         }
@@ -17,5 +18,4 @@ namespace PharmVerse.Domain.Patients.Patients
         public Patient Patient { get; }
 
     }
-
 }

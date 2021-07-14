@@ -15,4 +15,11 @@
     <ProjectReference Include="..\PharmVerse.Common\PharmVerse.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Categories\Handlers\Commands\" />
+    <Folder Include="Categories\Handlers\Events\" />
+    <Folder Include="Categories\Handlers\Queries\" />
+    <Folder Include="Categories\Validator\" />
+  </ItemGroup>
+
 </Project>

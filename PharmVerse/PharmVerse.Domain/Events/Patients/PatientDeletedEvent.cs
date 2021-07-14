@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PharmVerse.Domain.Patients.Patients
+namespace PharmVerse.Domain.Events.Patients
 {
-    public class PatientCreatedEvent : INotification
+    public class PatientDeletedEvent : INotification
     {
-        public PatientCreatedEvent(Patient patient)
+        public Patient Patient { get; }
+        public PatientDeletedEvent(Patient patient)
         {
             Patient = patient;
         }
-        public Patient Patient { get; }
     }
 }

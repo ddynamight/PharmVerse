@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using PharmVerse.Domain.Patients.Patients;
+﻿using MediatR;
+using Microsoft.Extensions.Logging;
+using PharmVerse.Domain.Events.Patients;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PharmVerse.Presentation.Patients.Handlers.Events
 {
-    public class AllPatientAccessedEventHandler
+    public class AllPatientAccessedEventHandler : INotificationHandler<AllPatientAccessedEvent>
     {
         private readonly ILogger<AllPatientAccessedEventHandler> _logger;
 
@@ -20,7 +21,7 @@ namespace PharmVerse.Presentation.Patients.Handlers.Events
 
         public Task Handle(AllPatientAccessedEvent notification, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"All Patient accessed Event: {notification.Patient.Capacity} Patients accessed Successfully");
+            _logger.LogInformation($"All Patient accessed Event: {notification.Patients.Capacity} Patients accessed Successfully");
 
             return Task.CompletedTask;
         }
