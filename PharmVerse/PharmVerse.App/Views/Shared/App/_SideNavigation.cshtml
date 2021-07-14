@@ -1,0 +1,145 @@
+﻿<!-- Desktop sidebar -->
+<aside class="z-20 flex-shrink-0 hidden w-60 pl-2 overflow-y-auto bg-white md:block shadow-lg">
+    <div>
+        <div class="text-black">
+            <div class="flex p-2  bg-white border-r">
+                <div class="flex py-3 px-2 items-center">
+                    <a asp-controller="Home" asp-action="Index"><img src="#" style="width: 40px;" alt="Logo"></a>
+                </div>
+            </div>
+
+            <div>
+                <ul class="mt-6 leading-10">
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:`bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- Mobile sidebar -->
+<!-- Backdrop -->
+<div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+     x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+     x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+     x-transition:leave-end="opacity-0"
+     class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
+
+<aside class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto  bg-white dark:bg-gray-800 md:hidden"
+       x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+       x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
+       x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0 transform -translate-x-20" @@click.away="closeSideMenu"
+       @@keydown.escape="closeSideMenu">
+    <div>
+        <div class="text-black">
+            <div class="flex p-2  bg-white">
+                <div class="flex py-3 px-2 items-center">
+                    <a asp-controller="Home" asp-action="Index"><img src="#" style="width: 40px;" alt="Logo"></a>
+                </div>
+            </div>
+            <div>
+                <ul class="mt-6 leading-10">
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:`bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="relative px-2 py-1 hover:bg-gray-100 rounded-md">
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 cursor-pointer hover:text-gray-800 hover:no-underline"
+                           asp-controller="Home" asp-action="Index">
+                            <span class="mdi mdi-account-multiple mdi-24px"></span>
+                            <span class="ml-4">Pharmacy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>App | Pharmverse</title>
+
+
+    <link href="~/contents/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/contents/lib/tailwind.min.css" rel="stylesheet" />
+    <link href="~/contents/styles/site.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="flex h-screen bg-white" ::class="{ 'overflow-hidden': isSideMenuOpen }">
+
+        <partial name="App/_SideNavigation" />
+
+        <div class="flex flex-col flex-1 w-full overflow-y-auto">
+            <partial name="App/_TopNavigation" />
+
+            @RenderBody()
+        </div>
+
+        @*<partial name="App/_Footer" />*@
+    </div>
+
+
+
+    
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        function data() {
+
+            return {
+
+                isSideMenuOpen: false,
+                toggleSideMenu() {
+                    this.isSideMenuOpen = !this.isSideMenuOpen
+                },
+                closeSideMenu() {
+                    this.isSideMenuOpen = false
+                },
+                isNotificationsMenuOpen: false,
+                toggleNotificationsMenu() {
+                    this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
+                },
+                closeNotificationsMenu() {
+                    this.isNotificationsMenuOpen = false
+                },
+                isProfileMenuOpen: false,
+                toggleProfileMenu() {
+                    this.isProfileMenuOpen = !this.isProfileMenuOpen
+                },
+                closeProfileMenu() {
+                    this.isProfileMenuOpen = false
+                },
+                isPagesMenuOpen: false,
+                togglePagesMenu() {
+                    this.isPagesMenuOpen = !this.isPagesMenuOpen
+                },
+
+            }
+        }
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
