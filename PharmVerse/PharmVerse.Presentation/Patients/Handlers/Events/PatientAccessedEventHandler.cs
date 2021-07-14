@@ -1,12 +1,8 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
-using PharmVerse.Domain.Events.Patients;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using PharmVerse.Domain.Patients.Patients;
 
 namespace PharmVerse.Presentation.Patients.Handlers.Events
 {
